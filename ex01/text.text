@@ -1,0 +1,3 @@
+std::cout << input.substr(0, 3) + ".";
+
+

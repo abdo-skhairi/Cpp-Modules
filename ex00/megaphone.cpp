@@ -19,10 +19,6 @@ int main(int ac, char **av)
             {
                 std::cout << (char)std::toupper(av[i][j]);
             }
-            else if(av[i][j] && (av[i][j] <= 'Z' && av[i][j] >= 'A'))
-            {
-                std::cout << (char)std::tolower(av[i][j]);
-            }
             else
             {
                 std::cout << av[i][j];
