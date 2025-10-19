@@ -7,8 +7,11 @@ OBJ = $(SRC:.cpp=.o)
 $(NAME): $(OBJ)
 	$(CXX) $(OBJ) -o $(NAME)
 
+
 clean:
 	rm -f $(OBJ)
 
 fclean:
 	rm -f $(OBJ) $(NAME)
+
+re: fclean $(NAME)

@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/19 13:19:06 by sabderra          #+#    #+#             */
+/*   Updated: 2025/10/19 13:19:07 by sabderra         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Phonebook.hpp"
 #include "Contact.hpp"
 
-int ft_cmp(std::string str1, std::string str2)
+static int ft_cmp(std::string str1, std::string str2)
 {
     int i = 0;
     int j = 0;
@@ -23,32 +35,23 @@ int ft_cmp(std::string str1, std::string str2)
     return(0);
 }
 
-
-// void setFields(Contact c)
-// {
-//     // c.display_contact;
-// }
-
-void isplayFull()
-{
-    
-}
-
 int main()
 {
-    Contact c;
-    // setFields(c);
-    c.set_values();
-    c.display_contact();
-    std::string input;
-    while(true)
-    {
-        std::cout << "Choose from the options [ADD] [SEARCH] [EXIT] : ";
-        std::getline(std::cin, input);
-        std::cout << input.substr(0, 3) + ".";
-        if(ft_cmp(input, "EXIT") == 0)
-            return(0);
+    PhoneBook phonebook;
+    std::string command;
+    while (true) {
+        std::cout << "\nEnter command (ADD, SEARCH, EXIT): ";
+        if (!std::getline(std::cin, command))
+            break;
+        if (!ft_cmp(command, "ADD"))
+            phonebook.addContact();
+        else if (!ft_cmp(command, "SEARCH"))
+            phonebook.searchContact();
+        else if (!ft_cmp(command, "EXIT"))
+            break;
         else
-            continue;
+            std::cout << "Invalid command.\n";
     }
+    std::cout << "Goodbye!\n";
+    return 0;
 }
