@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:18:45 by sabderra          #+#    #+#             */
-/*   Updated: 2025/10/19 13:18:46 by sabderra         ###   ########.fr       */
+/*   Updated: 2025/10/22 13:49:48 by sabderra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,15 @@ void PhoneBook::searchContact()
     displayContacts();
     if (contacts_counter == 0)
         return;
-    std::cout << " ";
     int index;
-    if (!(std::cin >> index)) {
+    std::cout << "\nEnter index: ";
+    if (!(std::cin >> index)){
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Invalid input.\n";
         return;
     }
+    std::cout << "\n";
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     if (index < 0 || index >= contacts_counter) {
         std::cout << "Invalid index.\n";

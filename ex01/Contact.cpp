@@ -6,11 +6,11 @@
 /*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:18:51 by sabderra          #+#    #+#             */
-/*   Updated: 2025/10/19 13:18:53 by sabderra         ###   ########.fr       */
+/*   Updated: 2025/10/22 09:33:48 by sabderra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+    #include "Contact.hpp"
 #include "Phonebook.hpp"
 
 static std::string get_input(const std::string& prompt)
@@ -44,7 +44,6 @@ static std::string get_input(const std::string& prompt)
         return input;
     }
 }
-
 
 static std::string format_field(const std::string& str)
 {

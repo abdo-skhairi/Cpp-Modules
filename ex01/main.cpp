@@ -42,7 +42,10 @@ int main()
     while (true) {
         std::cout << "\nEnter command (ADD, SEARCH, EXIT): ";
         if (!std::getline(std::cin, command))
+        {
+            std::cout << "\n";
             break;
+        }
         if (!ft_cmp(command, "ADD"))
             phonebook.addContact();
         else if (!ft_cmp(command, "SEARCH"))
