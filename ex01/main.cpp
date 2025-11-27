@@ -6,7 +6,7 @@
 /*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:19:06 by sabderra          #+#    #+#             */
-/*   Updated: 2025/10/19 13:19:07 by sabderra         ###   ########.fr       */
+/*   Updated: 2025/11/27 11:52:25 by sabderra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,23 @@ static int ft_cmp(std::string str1, std::string str2)
 {
     int i = 0;
     int j = 0;
-    while(std::isspace(str1[i]))
+
+    while(str1[i] && std::isspace(str1[i]))
         i++;
     while(str1[i] && str2[j])
     {
+        if(std::isspace(str1[i]))
+            break;
         if(str1[i] != str2[j])
             return(1);
         i++;
         j++;
     }
+    while(str1[i] && std::isspace(str1[i]))
+        i++;
     if(str1[i] != str2[j])
         return(1);
-    while(std::isspace(str1[i]))
+    while(std::isspace(str1[i]) && str1[i])
         i++;
     if(str1[i])
         return(1);
@@ -39,22 +44,17 @@ int main()
 {
     PhoneBook phonebook;
     std::string command;
-    while (true) {
+    while (true) 
+    {
         std::cout << "\nEnter command (ADD, SEARCH, EXIT): ";
         if (!std::getline(std::cin, command))
-        {
-            std::cout << "\n";
             break;
-        }
         if (!ft_cmp(command, "ADD"))
             phonebook.addContact();
         else if (!ft_cmp(command, "SEARCH"))
             phonebook.searchContact();
         else if (!ft_cmp(command, "EXIT"))
             break;
-        else
-            std::cout << "Invalid command.\n";
     }
-    std::cout << "Goodbye!\n";
     return 0;
 }

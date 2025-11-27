@@ -6,7 +6,7 @@
 /*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:18:45 by sabderra          #+#    #+#             */
-/*   Updated: 2025/10/22 13:49:48 by sabderra         ###   ########.fr       */
+/*   Updated: 2025/11/27 13:16:05 by sabderra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,12 @@ void PhoneBook::displayContacts()
               << std::setw(10) << "First Name" << "|"
               << std::setw(10) << "Last Name" << "|"
               << std::setw(10) << "Nickname" << std::endl;
-    for (int i = 0; i < contacts_counter; i++)
+    int i = 0;
+    while(i < contacts_counter)
+    {
         contacts[i].display_in_small_format(i);
+        i++;
+    }
 }
 
 void PhoneBook::searchContact()
@@ -47,7 +51,8 @@ void PhoneBook::searchContact()
         return;
     int index;
     std::cout << "\nEnter index: ";
-    if (!(std::cin >> index)){
+    if (!(std::cin >> index))
+    {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Invalid input.\n";

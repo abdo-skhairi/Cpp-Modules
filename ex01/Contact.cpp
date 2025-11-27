@@ -6,7 +6,7 @@
 /*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:18:51 by sabderra          #+#    #+#             */
-/*   Updated: 2025/10/22 09:33:48 by sabderra         ###   ########.fr       */
+/*   Updated: 2025/11/27 13:28:51 by sabderra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,38 @@ static std::string format_field(const std::string& str)
     return str;
 }
 
-void Contact::set_values()
+static int check_number(std::string   str)
 {
-    firstName = get_input("Enter first name: ");
-    lastName = get_input("Enter last name: ");
-    nickname = get_input("Enter nickname: ");
-    phoneNumber = get_input("Enter phone number: ");
-    darkestSecret = get_input("Enter darkest secret: ");
+    int i = 0;
+
+    while(str[i] && std::isspace(str[i]))
+        i++;
+    while (str[i] && std::isdigit(str[i]))
+        i++;
+    if(!str[i])
+        return(0);
+    while(str[i] && std::isspace(str[i]))
+        i++;
+    return(1);
 }
 
+void Contact::set_values()
+{
+    while (1)
+    {
+        firstName = get_input("Enter first name: ");
+        lastName = get_input("Enter last name: ");
+        nickname = get_input("Enter nickname: ");
+        phoneNumber = get_input("Enter phone number: ");
+        if(check_number(phoneNumber))
+        {
+            std::cout << "Number not valid\n\nEnter again :\n";
+            continue;
+        }
+        darkestSecret = get_input("Enter darkest secret: ");
+        break;
+    }
+}
 
 void Contact::display_in_small_format(int index)
 {
@@ -69,6 +92,8 @@ void Contact::display_in_small_format(int index)
               << std::setw(10) << format_field(lastName) << "|"
               << std::setw(10) << format_field(nickname) << std::endl;
 }
+
+
 
 void Contact::display_contact()
 {
