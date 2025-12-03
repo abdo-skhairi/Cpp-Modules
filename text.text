@@ -1,3 +1,17 @@
 std::cout << input.substr(0, 3) + ".";
 
 
+1-enter just index again
+
+Enter command (ADD, SEARCH, EXIT): ADD
+Enter first name: 1
+Enter last name: 1
+Enter nickname: 1
+Enter phone number: q
+Number not valid
+
+Enter again :
+Enter first name: q
+Enter last name: 
+
+

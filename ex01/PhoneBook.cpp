@@ -6,7 +6,7 @@
 /*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:18:45 by sabderra          #+#    #+#             */
-/*   Updated: 2025/11/27 13:16:05 by sabderra         ###   ########.fr       */
+/*   Updated: 2025/12/03 12:47:38 by sabderra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,22 +47,27 @@ void PhoneBook::displayContacts()
 void PhoneBook::searchContact()
 {
     displayContacts();
-    if (contacts_counter == 0)
-        return;
-    int index;
-    std::cout << "\nEnter index: ";
-    if (!(std::cin >> index))
+    while (1)
     {
-        std::cin.clear();
+        if (contacts_counter == 0)
+            return;
+        int index;
+        std::cout << "Enter index: ";
+        if (!(std::cin >> index))
+        {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Invalid input.";
+            return;
+        }
+        std::cout << "\n";
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Invalid input.\n";
-        return;
+        if (index < 0 || index >= contacts_counter) 
+        {
+            std::cout << "Index out of range: \n";
+            continue;
+        }
+        contacts[index].display_contact();
+        break;
     }
-    std::cout << "\n";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    if (index < 0 || index >= contacts_counter) {
-        std::cout << "Invalid index.\n";
-        return;
-    }
-    contacts[index].display_contact();
 }

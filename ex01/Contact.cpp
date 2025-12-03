@@ -6,7 +6,7 @@
 /*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:18:51 by sabderra          #+#    #+#             */
-/*   Updated: 2025/11/27 13:28:51 by sabderra         ###   ########.fr       */
+/*   Updated: 2025/12/03 12:44:11 by sabderra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ static std::string get_input(const std::string& prompt)
             std::cout << "\nError: input terminated unexpectedly.\n";
             return "";
         } 
-
         int i = 0;
         while (i < (int)input.size() && std::isspace(input[i]))
             i++;
@@ -40,7 +39,6 @@ static std::string get_input(const std::string& prompt)
             std::cout << "Error: field cannot be empty or contain only spaces.\n";
             continue;
         }
-
         return input;
     }
 }
