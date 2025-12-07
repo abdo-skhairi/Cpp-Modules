@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abdo <abdo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:19:06 by sabderra          #+#    #+#             */
-/*   Updated: 2025/11/27 11:52:25 by sabderra         ###   ########.fr       */
+/*   Updated: 2025/12/03 20:23:44 by abdo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ int main()
         else if (!ft_cmp(command, "SEARCH"))
             phonebook.searchContact();
         else if (!ft_cmp(command, "EXIT"))
-            break;
+            return 0;
     }
+    std::cout << std::endl;
     return 0;
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abdo <abdo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:18:51 by sabderra          #+#    #+#             */
-/*   Updated: 2025/12/03 12:44:11 by sabderra         ###   ########.fr       */
+/*   Updated: 2025/12/08 00:19:53 by abdo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-    #include "Contact.hpp"
+#include "Contact.hpp"
 #include "Phonebook.hpp"
 
 static std::string get_input(const std::string& prompt)
@@ -21,13 +21,16 @@ static std::string get_input(const std::string& prompt)
     {
         input = "";
         std::cout << prompt;
-        std::getline(std::cin, input);
-
-        if (!std::cin)
+        if (!std::getline(std::cin, input))
         {
+            if (std::cin.eof()) 
+            {
+                std::cout << "\nCtrl-D detected. Exiting...\n";
+                exit(1);
+            }
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "\nError: input terminated unexpectedly.\n";
+            std::cout << "\nError: input unexpectedly.\n";
             return "";
         } 
         int i = 0;
@@ -56,7 +59,13 @@ static int check_number(std::string   str)
 
     while(str[i] && std::isspace(str[i]))
         i++;
+    if(str[i] && (str[i] == '-' || str[i] == '+'))
+        i++;
+    if(str[i] && !(std::isdigit(str[i])))
+        return(1);
     while (str[i] && std::isdigit(str[i]))
+        i++;
+    while(str[i] && std::isspace(str[i]))
         i++;
     if(!str[i])
         return(0);
@@ -67,20 +76,20 @@ static int check_number(std::string   str)
 
 void Contact::set_values()
 {
+    firstName = get_input("Enter first name: ");
+    lastName = get_input("Enter last name: ");
+    nickname = get_input("Enter nickname: ");
     while (1)
     {
-        firstName = get_input("Enter first name: ");
-        lastName = get_input("Enter last name: ");
-        nickname = get_input("Enter nickname: ");
         phoneNumber = get_input("Enter phone number: ");
         if(check_number(phoneNumber))
         {
-            std::cout << "Number not valid\n\nEnter again :\n";
+            std::cout << "Number not valid" << std::endl;
             continue;
         }
-        darkestSecret = get_input("Enter darkest secret: ");
         break;
     }
+    darkestSecret = get_input("Enter darkest secret: ");
 }
 
 void Contact::display_in_small_format(int index)
