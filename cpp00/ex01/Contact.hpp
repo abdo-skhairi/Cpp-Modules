@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdo <abdo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:18:57 by sabderra          #+#    #+#             */
-/*   Updated: 2025/12/03 19:47:30 by abdo             ###   ########.fr       */
+/*   Updated: 2025/12/16 16:50:50 by sabderra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Contact{
     public:
         void set_values();
         void display_contact();
-        void display_in_small_format(int index); //for SEARCH method
+        void display_in_small_format(int index);
 };
 
 #endif
