@@ -4,9 +4,8 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 OBJ = $(SRC:.cpp=.o)
-HEADER = Zombie.hpp
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) Zombie.hpp
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp $(HEADER)

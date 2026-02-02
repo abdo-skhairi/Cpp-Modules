@@ -6,7 +6,7 @@
 /*   By: abdo <abdo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:18:45 by sabderra          #+#    #+#             */
-/*   Updated: 2025/12/04 17:38:59 by abdo             ###   ########.fr       */
+/*   Updated: 2026/02/02 23:07:09 by abdo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,8 @@ void PhoneBook::searchContact()
         std::cout << "Enter index: ";
         if (!(std::cin >> index))
         {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Invalid input.";
-            return;
+            std::cout << "Invalid input\n";
+            
         }
         std::cout << "\n";
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');

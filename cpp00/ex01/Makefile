@@ -4,9 +4,8 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp PhoneBook.cpp Contact.cpp
 OBJ = $(SRC:.cpp=.o)
-HEADER = PhoneBook.hpp Contact.hpp
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) Phonebook.hpp Contact.hpp
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp $(HEADER)

@@ -6,7 +6,7 @@ SRC = main.cpp  Zombie.cpp zombieHorde.cpp
 OBJ = $(SRC:.cpp=.o)
 HEADER = Zombie.hpp
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) Zombie.hpp
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp $(HEADER)

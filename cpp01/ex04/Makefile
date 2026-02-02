@@ -6,7 +6,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) FileReplacer.hpp
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp

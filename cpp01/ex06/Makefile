@@ -6,7 +6,7 @@ OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) Harl.hpp
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp

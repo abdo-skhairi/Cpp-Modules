@@ -6,7 +6,7 @@ SRC = main.cpp HumanA.cpp  HumanB.cpp Weapon.cpp
 OBJ = $(SRC:.cpp=.o)
 HEADER = HumanB.hpp HumanA.cpp
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) HumanA.hpp Weapon.hpp HumanB.hpp
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp $(HEADER)
