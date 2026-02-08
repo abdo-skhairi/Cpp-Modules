@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abdo <abdo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:18:57 by sabderra          #+#    #+#             */
-/*   Updated: 2025/12/16 16:50:50 by sabderra         ###   ########.fr       */
+/*   Updated: 2026/02/08 14:46:28 by abdo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,8 @@ class Contact{
         void display_contact();
         void display_in_small_format(int index);
 };
+
+
+int check_number(std::string   str);
 
 #endif

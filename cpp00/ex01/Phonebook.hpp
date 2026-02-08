@@ -6,7 +6,7 @@
 /*   By: abdo <abdo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:19:16 by sabderra          #+#    #+#             */
-/*   Updated: 2025/12/03 19:47:33 by abdo             ###   ########.fr       */
+/*   Updated: 2026/02/08 16:27:40 by abdo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <limits>
 #include <cctype>
 #include <cstdlib>
+#include <cstdio>
 
 class PhoneBook {
 private:

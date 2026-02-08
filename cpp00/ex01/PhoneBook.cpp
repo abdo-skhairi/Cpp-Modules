@@ -6,23 +6,26 @@
 /*   By: abdo <abdo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 13:18:45 by sabderra          #+#    #+#             */
-/*   Updated: 2026/02/02 23:07:09 by abdo             ###   ########.fr       */
+/*   Updated: 2026/02/08 17:21:14 by abdo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 #include "Contact.hpp"
 
-PhoneBook::PhoneBook() : contacts_counter(0), next_index(0) {}
+PhoneBook::PhoneBook() : contacts_counter(0), next_index(0) 
+{}
 
 void PhoneBook::addContact()
 {
     Contact new_contact;
+
     new_contact.set_values();
     contacts[next_index] = new_contact;
     if (contacts_counter < 8)
         contacts_counter++;
     next_index = (next_index + 1) % 8;
+    std::cout << next_index << std::endl;
     std::cout << "Contact added successfully!" << std::endl;
 }
 
@@ -47,22 +50,30 @@ void PhoneBook::displayContacts()
 void PhoneBook::searchContact()
 {
     displayContacts();
+    if (contacts_counter == 0)
+        return;
+
     while (1)
     {
-        if (contacts_counter == 0)
-            return;
+        std::string line;
         int index;
+
         std::cout << "Enter index: ";
-        if (!(std::cin >> index))
+        std::getline(std::cin, line);
+        std::cout << std::endl;
+        if (std::cin.eof())
         {
-            std::cout << "Invalid input\n";
-            
+            std::cout << "\nCtrl-D detected. Exiting...\n";
+            std::exit(0);
         }
-        std::cout << "\n";
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        if (index < 0 || index >= contacts_counter) 
+        if (sscanf(line.c_str(), "%d", &index) != 1 || (check_number(line) == 1)) 
         {
-            std::cout << "Index out of range: \n";
+            std::cout << "Invalid input \n";
+            continue;
+        }
+        if (index < 0 || index >= contacts_counter)
+        {
+            std::cout << "Index out of range.\n";
             continue;
         }
         contacts[index].display_contact();
