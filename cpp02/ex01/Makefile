@@ -1,4 +1,3 @@
-
 NAME = a.out
 
 CXX = c++
