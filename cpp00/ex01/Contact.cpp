@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdo <abdo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 13:18:51 by sabderra          #+#    #+#             */
-/*   Updated: 2026/02/08 22:32:48 by abdo             ###   ########.fr       */
+/*   Created: 2026/02/14 17:50:22 by sabderra          #+#    #+#             */
+/*   Updated: 2026/02/14 21:04:36 by sabderra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,22 @@ static std::string get_input(const std::string& prompt)
     }
 }
 
-static std::string format_field(const std::string& str)
+static std::string format_field(const std::string str)
 {
-    if (str.length() > 10)
-        return str.substr(0, 9) + ".";
-    return str;
+    int i = 0;
+    std::string str2;
+
+    while (i < (int)str.length())
+    {
+        if(str[i] != '\t')
+            str2 += str[i];
+        else
+            str2 += ' ';
+        i++;
+    }
+    if (str2.length() > 10)
+        return str2.substr(0, 9) + ".";
+    return str2;
 }
 
 int check_number(std::string   str)
