@@ -21,7 +21,8 @@ void Harl::error()
     std::cout << "[ ERROR ]\n This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void Harl::filter(std::string level) {
+void Harl::filter(std::string level) 
+{
     std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     void (Harl::*functions[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     int start = -1;

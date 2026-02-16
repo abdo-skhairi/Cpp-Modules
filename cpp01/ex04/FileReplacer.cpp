@@ -9,8 +9,10 @@ std::string FileReplacer::readFile()
 {
     std::ifstream file(filename);
     if (!file.is_open())
-        throw std::runtime_error("Cannot open file");
-
+    {
+        std::fprintf(stderr, "Cannot open file\n");
+        exit(1);
+    }
     std::string content;
     std::string line;
     while (std::getline(file, line))
@@ -27,8 +29,10 @@ void FileReplacer::writeFile(const std::string& content)
 {
     std::ofstream file(filename + ".replace");
     if (!file.is_open())
-        throw std::runtime_error("Cannot create output file");
-
+    {
+        std::fprintf(stderr, "Cannot create output file\n");
+        exit(1);
+    }
     file << content;
     file.close();
 }
