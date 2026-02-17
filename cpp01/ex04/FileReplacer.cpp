@@ -1,6 +1,6 @@
 #include "FileReplacer.hpp"
 
-FileReplacer::FileReplacer(const std::string& filename, const std::string& s1, const std::string& s2)
+FileReplacer::FileReplacer(std::string filename, std::string s1, std::string s2)
     : filename(filename), s1(s1), s2(s2)
 {
 }
@@ -25,7 +25,7 @@ std::string FileReplacer::readFile()
     return content;
 }
 
-void FileReplacer::writeFile(const std::string& content)
+void FileReplacer::writeFile(std::string content)
 {
     std::ofstream file(filename + ".replace");
     if (!file.is_open())
@@ -37,7 +37,7 @@ void FileReplacer::writeFile(const std::string& content)
     file.close();
 }
 
-std::string FileReplacer::replaceString(const std::string& content)
+std::string FileReplacer::replaceString(std::string content)
 {
     std::string result = content;
     size_t pos = 0;

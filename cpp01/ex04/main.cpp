@@ -18,7 +18,6 @@ int main(int argc, char** argv)
         std::cerr << "s1 cannot be empty" << std::endl;
         return 1;
     }
-
     try
     {
         FileReplacer replacer(filename, s1, s2);
