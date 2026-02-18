@@ -35,14 +35,10 @@ void Harl::filter(std::string level)
         lvl = 3;
     switch (lvl)
     {
-        case 0:
-            debug();
-        case 1:
-            info();
-        case 2:
-            warning();
-        case 3:
-            error();
+        case 0: debug();
+        case 1: info();
+        case 2: warning();
+        case 3: error();
             break;
         default:
             std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;

@@ -10,7 +10,7 @@ std::string FileReplacer::readFile()
     std::ifstream file(filename);
     if (!file.is_open())
     {
-        std::fprintf(stderr, "Cannot open file\n");
+        std::cerr << "Cannot open file\n";
         exit(1);
     }
     std::string content;
@@ -30,7 +30,7 @@ void FileReplacer::writeFile(std::string content)
     std::ofstream file(filename + ".replace");
     if (!file.is_open())
     {
-        std::fprintf(stderr, "Cannot create output file\n");
+        std::cerr << "Cannot create output file\n";
         exit(1);
     }
     file << content;
@@ -39,13 +39,21 @@ void FileReplacer::writeFile(std::string content)
 
 std::string FileReplacer::replaceString(std::string content)
 {
-    std::string result = content;
-    size_t pos = 0;
-    while ((pos = result.find(s1, pos)) != std::string::npos)
+    std::string result;
+    size_t i = 0;
+
+    while (i < content.length())
     {
-        result.erase(pos, s1.length());
-        result.insert(pos, s2);
-        pos += s2.length();
+        if (content.substr(i, s1.length()) == s1)
+        {
+            result += s2;
+            i += s1.length();
+        }
+        else
+        {
+            result += content[i];
+            i++;
+        }
     }
     return result;
 }
