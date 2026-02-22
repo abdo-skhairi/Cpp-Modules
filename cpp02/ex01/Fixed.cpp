@@ -6,7 +6,7 @@
 /*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 15:59:06 by sabderra          #+#    #+#             */
-/*   Updated: 2026/02/12 17:22:14 by sabderra         ###   ########.fr       */
+/*   Updated: 2026/02/22 13:52:37 by sabderra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,18 @@ Fixed::~Fixed(void)
 
 int Fixed::getRawBits(void) const
 {
-	return _rawBits;
+	std::cout << "getRawBits member function called" << std::endl;
+	return this->_rawBits;
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	_rawBits = raw;
+	this->_rawBits = raw;
 }
 
 float Fixed::toFloat(void) const
 {
-	return (float)_rawBits / (1 << _fracBits);
+	return ((float)_rawBits / (1 << _fracBits));
 }
 
 int Fixed::toInt(void) const

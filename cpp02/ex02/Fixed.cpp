@@ -6,17 +6,21 @@
 /*   By: sabderra <sabderra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 18:46:44 by sabderra          #+#    #+#             */
-/*   Updated: 2026/02/12 18:46:46 by sabderra         ###   ########.fr       */
+/*   Updated: 2026/02/22 10:56:12 by sabderra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <cmath>
 
-Fixed::Fixed(void) : _rawBits(0) {}
+Fixed::Fixed(void) : _rawBits(0)
+{
+	std::cout << "Default constructor called" << std::endl;
+}
 
 Fixed::Fixed(const Fixed &other)
 {
+	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
