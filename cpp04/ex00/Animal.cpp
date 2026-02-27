@@ -28,7 +28,7 @@ Animal::Animal(const Animal &other)
     std::cout << "Copy constructor called for " << type << std::endl;
 }
 
-void makeSound()
+void Animal::makeSound()
 {
     std::cout << "Animal sound" << std::endl;
 }

@@ -5,10 +5,13 @@
 
 class Cat : public Animal
 {
-    public:
+    protected:
         Cat();
+        Cat(const Cat &other);
         ~Cat();
-        
+        Cat &operator=(const Cat &other);
+        void makeSound();
+        std::string getType();
 };
 
 #endif
