@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
@@ -31,4 +32,5 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
+    Form f1("f1", 3, 3);
 }

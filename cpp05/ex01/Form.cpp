@@ -10,7 +10,7 @@ const char* Form::GradeTooLowException::what() const throw()
     return "Form grade too low";
 }
 
-Form::Form() : name("Default"), gradeToSign(75), gradeToExecute(75), isSigned(true)
+Form::Form() : name("Default"), isSigned(true),  gradeToSign(75), gradeToExecute(75)
 {
     std::cout << "Defaut constructor called" << std::endl;
 }
@@ -27,6 +27,6 @@ Form::~Form()
 
 std::string Form::getName() {return name;}
 bool        Form::getisSigned() { return isSigned;}
-const int   Form::getGradeToSign(){return gradeToSign;}
-const int Form::getGradeToExecute() {return gradeToExecute;}
+int         Form::getGradeToSign() const {return gradeToSign;}
+int         Form::getGradeToExecute() const  {return gradeToExecute;}
 

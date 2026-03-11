@@ -26,8 +26,8 @@ class Form
         };
         std::string getName();
         bool getisSigned();
-        const int getGradeToSign();
-        const int getGradeToExecute();
+        int getGradeToSign() const;
+        int getGradeToExecute() const;
 };
 
 #endif

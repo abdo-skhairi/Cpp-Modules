@@ -2,9 +2,9 @@ NAME = Bureaucrat
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = Bureaucrat.cpp main.cpp
+SRC = Bureaucrat.cpp Form.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
-HEADER = Bureaucrat.hpp
+HEADER = Bureaucrat.hpp Form.hpp
 
 $(NAME): $(OBJ) $(HEADER)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
