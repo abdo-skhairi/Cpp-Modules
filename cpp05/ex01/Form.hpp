@@ -28,6 +28,9 @@ class Form
         bool getisSigned();
         int getGradeToSign() const;
         int getGradeToExecute() const;
+        // beSigned()
+        // signForm()
+        // operator<<
 };
 
 #endif
