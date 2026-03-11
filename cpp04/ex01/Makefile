@@ -1,10 +1,10 @@
-NAME = ex00
+NAME = ex01
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Cat.cpp Animal.cpp Dog.cpp 
+SRC = main.cpp Cat.cpp Animal.cpp Dog.cpp Brain.cpp
 OBJ = $(SRC:.cpp=.o)
-HEADER = Cat.hpp Animal.hpp Dog.hpp
+HEADER = Cat.hpp Animal.hpp Dog.hpp Brain.hpp
 
 $(NAME): $(OBJ) $(HEADER)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
