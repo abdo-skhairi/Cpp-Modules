@@ -5,32 +5,36 @@ int main()
 {
     try
     {
-        Bureaucrat b4("Diana", 2);
-        b4.incrementGrade();
-        std::cout << b4 << std::endl;
-        try 
-        {
-             b4.incrementGrade(); 
-        }
-        catch (std::exception &e) 
-        {
-             std::cout << e.what() << std::endl; 
-        }
-        Bureaucrat b5("Edward", 149);
-        b5.decrementGrade();
-        std::cout << b5 << std::endl;
-        try 
-        {
-            b5.decrementGrade();
-        }
-        catch (std::exception &e) 
-        {
-            std::cout << e.what() << std::endl;
-        }
+        Bureaucrat alice("Alice", 1);
+        Bureaucrat bob("Bob", 50);
+
+        Form secret("TopSecret", 1, 30);
+        Form normal("Routine", 50, 75);
+
+        alice.signForm(secret);
+        bob.signForm(secret);
+
+        bob.signForm(normal);
+        alice.signForm(normal);
+
+        std::cout << secret << std::endl;
+        std::cout << normal << std::endl;
+
+        Form copyForm(secret);
+        Form assignForm("Temp", 75, 75);
+        assignForm = normal;
+
+        Bureaucrat copyBureau(alice);
+        Bureaucrat assignBureau("Temp", 100);
+        assignBureau = bob;
+
+        std::cout << copyForm << std::endl;
+        std::cout << assignForm << std::endl;
+        std::cout << copyBureau << std::endl;
+        std::cout << assignBureau << std::endl;
     }
-    catch(std::exception &e)
+    catch (std::exception &e)
     {
-        std::cout << e.what() << std::endl;
+        std::cout << "Exception: " << e.what() << std::endl;
     }
-    Form f1("f1", 3, 3);
 }
