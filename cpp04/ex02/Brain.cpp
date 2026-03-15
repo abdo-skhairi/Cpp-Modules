@@ -41,3 +41,4 @@ std::string Brain::getIdea(int index) const
         return ideas[index];
     return "";
 }
+ 
