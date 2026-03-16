@@ -5,14 +5,14 @@
 
 class ShrubberyCreationForm : public AForm
 {
-private:
-	std::string target;
+	private:
+		std::string target;
 
-public:
-	ShrubberyCreationForm(const std::string &target);
-	~ShrubberyCreationForm();
+	public:
+		ShrubberyCreationForm(const std::string &target);
+		~ShrubberyCreationForm();
 
-	void execute(Bureaucrat const &executor) const;
+		void execute(Bureaucrat const &executor) const;
 };
 
 #endif

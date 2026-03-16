@@ -5,14 +5,14 @@
 
 class PresidentialPardonForm : public AForm
 {
-private:
-	std::string target;
+	private:
+		std::string target;
 
-public:
-	PresidentialPardonForm(const std::string &target);
-	~PresidentialPardonForm();
+	public:
+		PresidentialPardonForm(const std::string &target);
+		~PresidentialPardonForm();
 
-	void execute(Bureaucrat const &executor) const;
+		void execute(Bureaucrat const &executor) const;
 };
 
 #endif
