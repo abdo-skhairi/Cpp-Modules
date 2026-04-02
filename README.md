@@ -107,4 +107,4 @@ c++ -Wall -Wextra -Werror -std=c++98 *.cpp -o program
 
 1337 Student | Computer Science 🇲🇦
 
-</div> ```
+</div>
