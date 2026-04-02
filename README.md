@@ -105,6 +105,6 @@ c++ -Wall -Wextra -Werror -std=c++98 *.cpp -o program
 <div align="center">
 👨‍💻 Abde Rahmane Skhairi
 
-1337 Student | Computer Science 🇲🇦
+1337 Student | Computer Science
 
 </div>
