@@ -100,3 +100,10 @@ These modules introduce the core concepts of **Object-Oriented Programming (OOP)
 
 ```bash
 c++ -Wall -Wextra -Werror -std=c++98 *.cpp -o program
+
+<div align="center">
+👨‍💻 Abde Rahmane Skhairi
+
+1337 Student | Computer Science 🇲🇦
+
+</div> ```
