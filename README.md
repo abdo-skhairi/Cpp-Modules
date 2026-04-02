@@ -102,7 +102,6 @@ These modules introduce the core concepts of **Object-Oriented Programming (OOP)
 c++ -Wall -Wextra -Werror -std=c++98 *.cpp -o program
 ```
 
-```bash
 <div align="center">
 👨‍💻 Abde Rahmane Skhairi
 
